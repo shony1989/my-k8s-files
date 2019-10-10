@@ -22,10 +22,9 @@ spec:
         prometheus.io/scrape: "true"
     spec:
       serviceAccountName: nginx-ingress-serviceaccount
-      hostNetwork: true
       containers:
         - name: nginx-ingress-controller
-          image: carehubdevregistry.azurecr.io/nginx-ingress-controller:0.25.1
+          image: carehubdevregistry.azurecr.io/nginx-ingress-controller:0.26.1
           args:
             - /nginx-ingress-controller
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
