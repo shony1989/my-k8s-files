@@ -197,10 +197,10 @@ spec:
         prometheus.io/port: "10254"
         prometheus.io/scrape: "true"
     spec:
-      serviceAccountName: default
+      serviceAccountName: nginx-ingress-serviceaccount
       containers:
         - name: nginx-ingress-controller
-          image: carehubdevregistry.azurecr.io/nginx-ingress-controller:0.24.1
+          image: carehubdevregistry.azurecr.io/nginx-ingress-controller:dev
           args:
             - /nginx-ingress-controller
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
