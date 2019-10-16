@@ -7,7 +7,6 @@ metadata:
     service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "aks01-subnet"
 spec:
   type: LoadBalancer
-  loadBalancerIP: 10.232.111.100
   ports:
   - port: 443
   selector:
