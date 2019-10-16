@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: care-event-in-service
+  labels:
+    app: care-event-in-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: care-event-in-service
+  template:
+    metadata:
+      labels:
+        app: care-event-in-service
+    spec:
+      containers:
+      - name: care-event-in-service
+        image: carehubdevregistry.azurecr.io/care-event-in-service:181887
+        ports:
+           - containerPort: 9095
+        readinessProbe:
+           httpGet:
+             path: /actuator/health
+             port: 9095
+           initialDelaySeconds: 60
+           periodSeconds: 5
