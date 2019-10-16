@@ -4,10 +4,11 @@ metadata:
   name: internal-app
   annotations:
     service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-    service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "apps-subnet"
+    service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "aks01-subnet"
 spec:
   type: LoadBalancer
+  loadBalancerIP: 10.232.111.100
   ports:
-  - port: 80
+  - port: 443
   selector:
     app: internal-app
