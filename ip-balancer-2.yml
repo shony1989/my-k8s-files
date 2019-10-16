@@ -4,7 +4,7 @@ metadata:
   name: internal-app-1
   annotations:
     service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-    service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "apps-subnet"
+    service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "dev01-subnet"
 spec:
   type: LoadBalancer
   ports:
