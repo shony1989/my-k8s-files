@@ -58,10 +58,9 @@ spec:
     spec:
       containers:
         - name: nginx-ingress-controller
-          image: carehubdevregistry.azurecr.io/nginx-ingress-controller:0.24.1
+          image: carehubdevregistry.azurecr.io/nginx-ingress-controller:0.26.1
           args:
             - /nginx-ingress-controller
-            - --apiserver-host=https://carehub02-83c0a0f0.hcp.westeurope.azmk8s.io
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
             - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
             - --udp-services-configmap=$(POD_NAMESPACE)/udp-services
