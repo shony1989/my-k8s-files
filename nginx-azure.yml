@@ -117,11 +117,13 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: ingress-nginx
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+    service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "aks01-subnet"
 spec:
   externalTrafficPolicy: Local
   type: LoadBalancer
   # your internal IP
-  loadBalancerIP: 10.232.111.25
   selector:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: ingress-nginx
