@@ -61,7 +61,7 @@ spec:
           image: carehubdevregistry.azurecr.io/nginx-ingress-controller:0.26.1
           args:
             - /nginx-ingress-controller
-            - --default-ssl-certificate=default/ingress-secret-tls
+            - --default-ssl-certificate=$(POD_NAMESPACE)/default/ingress-secret-tls
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
             - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
             - --udp-services-configmap=$(POD_NAMESPACE)/udp-services
