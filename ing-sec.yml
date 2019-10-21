@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ingress-secret-tls
+  namespace: default
+data:
+  tls.crt: /my-cert.pem
+  tls.key: /my-key.key
+type: kubernetes.io/tls
