@@ -61,12 +61,12 @@ spec:
           image: carehubdevregistry.azurecr.io/nginx-ingress-controller:0.26.1
           args:
             - /nginx-ingress-controller
-            - --default-ssl-certificate=ingress-secret-tls
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
             - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
             - --udp-services-configmap=$(POD_NAMESPACE)/udp-services
             - --publish-service=$(POD_NAMESPACE)/ingress-nginx
             - --annotations-prefix=nginx.ingress.kubernetes.io
+            - --default-ssl-certificate=ingress-secret-tls
           securityContext:
             allowPrivilegeEscalation: true
             capabilities:
