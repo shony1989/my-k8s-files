@@ -1,6 +1,6 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: kafka-svc
+  name: zk-svc
 spec:
   clusterIP: None
