@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: cassandra
-        image: caredevecr.azurecr.io/cassandra:latest
+        image: caredevecr.azurecr.io/cassandra:test
         imagePullPolicy: IfNotPresent
         ports:
            - containerPort: 9042
